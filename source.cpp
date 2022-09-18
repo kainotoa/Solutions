@@ -1,4 +1,5 @@
-uint64_t Pow(uint64_t val, uint64_t pow)
+// Number 'val' raised to power 'pow' TC = O(log(n,2)) SC = O(1)
+uint64_t PowNoRec(uint64_t val, uint64_t pow)
 {
 	if (val == 0)
 		return 0;
