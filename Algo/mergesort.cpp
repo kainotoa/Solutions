@@ -1,3 +1,4 @@
+// Merge Algo T.C. = O(n) S.C. = O(n) outplace algo
 template<typename T>
 void merge(T* arr, int& left, int& mid,
     int& right)
@@ -49,6 +50,7 @@ void merge(T* arr, int& left, int& mid,
     delete[] rightArr;
 }
 
+// Merge Sort Algo by DAC Recursive T.C. = (merge algo * DAC) = O(nlog(n,2)) S.C. = (merge algo + DAC Stack) = O(n + log(n,2)) = O(n)
 template<typename T>
 void mergeSort(T* arr, int begin, int end)
 {
