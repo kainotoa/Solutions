@@ -13,3 +13,4 @@ T nCr(T n, T k)
     return result;
 }
 // works by using a single loop to both increment R value and Decrease N value
+// TC = O(k) k <= n/2, SC = O(1);
