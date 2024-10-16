@@ -1,0 +1,39 @@
+#include <iostream>
+#include <cstring>
+#include <cmath>
+using namespace std;
+
+const int maxn = 1e7;
+int marked[maxn+1];
+int psum[maxn+1];
+// psum[i] = no. of primes in (0,1,2...i)
+
+
+int main() {
+	// your code goes here
+	
+	memset(marked, 0, sizeof(marked));
+	psum[1] = psum[0] = 0;
+	
+	for(int x=2; x<=maxn; x++){
+	    psum[x] = psum[x-1];
+	    if(!marked[x]){
+	        for(int cur = x * 2; cur<= maxn; cur += x){
+	            marked[cur] = 1;
+	        }
+	        psum[x]++;
+	    }
+	}
+	
+	int t,n;
+	cin>>t;
+	while(t--){
+	    cin>>n;
+	    int ans = 0;
+	    if(n/2 >= 2) ans++;
+	    ans += psum[n] - psum[n/2];
+	    cout << ans << endl;
+	    
+	}
+	return 0;
+}
